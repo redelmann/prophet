@@ -5,6 +5,8 @@ var rollSwiftStride = d6
   .times(3, function(xs, ys) { return xs.concat(ys); })
   .map(function(xs) { var sorted = xs.sort(); return sorted[1] + sorted[2]; });
 
+var colors = ["#950912", "#911E09", "#8E3C0A", "#8B580B", "#87720B", "#7D840C", "#60810C", "#457D0D", "#2B7A0D", "#12770E"];
+
 function computeDistribution(distance, movement, swiftStride, rerollFailure, rerollSuccess) {
   var target = distance - movement;
 
@@ -32,8 +34,8 @@ function update() {
 
   var prob = dist.probabilityAt(true);
   var text = "" + (parseInt(prob.mul(1000).round().toFraction()) / 10) + "%";
-
-  $("#result").text(text);
+  var index = Math.min(parseInt(prob.mul(10).floor().toFraction()), 9);
+  $("#result").text(text).css('color', colors[index]);
 }
 
 $(function() {
