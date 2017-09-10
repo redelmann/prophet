@@ -30,7 +30,10 @@ function update() {
   var rerollFailure = $("#reroll-failure").prop("checked");
   var dist = computeDistribution(distance, movement, swiftStride, rerollFailure, rerollSuccess);
 
-  $("#result").text(dist.probabilityAt(true).mul(100).round().toFraction() + "%");
+  var prob = dist.probabilityAt(true);
+  var text = "" + (parseInt(prob.mul(1000).round().toFraction()) / 10) + "%";
+
+  $("#result").text(text);
 }
 
 $(function() {
