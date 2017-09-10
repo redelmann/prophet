@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="css/main.css" />
   <script type="text/javascript" src="js/fraction.js"></script>
   <script type="text/javascript" src="js/aleatory.js"></script>
@@ -10,35 +11,38 @@
   <script type="text/javascript" src="js/charge.js"></script>
 </head>
 <body>
-  <div class="box">
-    <label for="distance">Distance</label>
-    <select name="distance" id="distance" data-from="1" data-to="22">
-      <option value="23">23+</option>
-    </select>
+  <div id="controls">
+    <div class="box">
+      <label for="distance">Distance</label>
+      <select name="distance" id="distance" data-from="1" data-to="22">
+        <option value="23">23+</option>
+      </select>
+    </div>
+
+    <div class="box">
+    <label for="movement">Movement</label>
+      <select name="movement" id="movement" data-from="1" data-to="10">
+      </select>
+    </div>
+
+    <div class="box">
+      <label for="swiftstride">Swiftstride</label>
+      <input type="checkbox" name="swiftstride" id="swiftstride" />
+    </div>
+
+    <div class="box">
+      <label for="reroll-failure">Reroll on Failed Charges</label>
+      <input type="checkbox" name="reroll-failure" id="reroll-failure" />
+    </div>
+
+    <div class="box">
+      <label for="reroll-success">Reroll on Successful Charges</label>
+      <input type="checkbox" name="reroll-success" id="reroll-success" />
+    </div>
   </div>
 
-  <div class="box">
-  <label for="movement">Movement</label>
-    <select name="movement" id="movement" data-from="1" data-to="10">
-    </select>
+  <div id="display">
+    <div id="result">...</div>
   </div>
-
-  <div class="box">
-    <label for="swiftstride">Swiftstride</label>
-    <input type="checkbox" name="swiftstride" id="swiftstride" />
-  </div>
-
-  <div class="box">
-    <label for="reroll-failure">Reroll on Failed Charges</label>
-    <input type="checkbox" name="reroll-failure" id="reroll-failure" />
-  </div>
-
-  <div class="box">
-    <label for="reroll-success">Reroll on Successful Charges</label>
-    <input type="checkbox" name="reroll-success" id="reroll-success" />
-  </div>
-
-  <div id="result">...</div>
-
 </body>
 </html>
